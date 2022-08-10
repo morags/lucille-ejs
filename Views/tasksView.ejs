@@ -1,0 +1,15 @@
+const tasksView = `
+<div class="container text-center p-5">
+    <div class="row g-5">
+        <% tasks.forEach((t) => { %>
+            <div class="col">
+                <div class="card g-5">
+                    <p class="card-title">
+                        <%= t %>
+                    </p>
+                </div>
+            </div>
+            <% }); %>
+    </div>
+</div>
+`
