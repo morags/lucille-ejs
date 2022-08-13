@@ -1,0 +1,18 @@
+const boardView = `
+<div class="container text-center p-5">
+    <div class="row g-5">
+        <%
+            var boards = ['Weekend List', 'Gardening', 'Holiday Shop','Birthday shop','Dinner tasks'];
+        %>
+        <% boards.forEach((t) => { %>
+            <div class="col">
+                <div class="card g-5" style="width: 10rem; height: 4rem">
+                    <p class="card-title">
+                        <%= t %>
+                    </p>
+                </div>
+            </div>
+            <% }); %>
+    </div>
+</div>
+`

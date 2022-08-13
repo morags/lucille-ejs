@@ -13,12 +13,8 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
-</head>
 
-<body>
-  <nav></nav>
-  <main></main>
-
+  
   <!-- JS libraries -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
@@ -32,12 +28,14 @@
   <!-- Views -->
   <script src="views/tabsView.ejs"></script>
   <script src="views/tasksView.ejs"></script>
+</head>
+
+<body>
+  <nav></nav>
+  <main></main>
 
   <!-- Starter script -->
   <script>
-    // DB
-    var db = new PouchDB('todos');
-
     // Navbar
     const tabs = ejs.render(tabsView);
     document.querySelector('nav').innerHTML = tabs;
@@ -48,6 +46,12 @@
       document.querySelector('main').innerHTML = tasks;
     });
   </script>
+
+  <button type="button">Button 1</button>
+  <button type="button">Button 2</button>
+  <button type="button">Button 3</button>
+  <button type="button">Task</button>
+
 </body>
 
 </html>

@@ -1,3 +1,14 @@
+ // DB
+var db = new PouchDB('todos');
+
+db.info(function(err,info){
+    db.changes({
+        since: info.update_seq,
+        live: true
+    }).on('change', showTodos)
+});
+
+  
 function addTodo(text) {
     let todo = {
         _id: new Date().toISOString(),
@@ -9,6 +20,14 @@ function addTodo(text) {
         if (!err) {
             console.log('Successfully posted a todo!');
         }
+    });
+}
+
+function showTodos() {
+    db.allDocs({include_docs: true, descending: true}).then(function(doc){
+      redrawTodosUI(doc.rows);
+    }).catch(function(err) {
+        console.log(err);
     });
 }
 
@@ -25,3 +44,4 @@ async function getAll() {
         console.log(err);
     }
 }
+

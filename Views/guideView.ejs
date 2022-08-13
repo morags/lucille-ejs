@@ -1,0 +1,23 @@
+const guideView = `
+<div class="container text-center p-5">
+    <div class="row g-5">
+        <%
+            var guides = [
+                'I cannnot read the text.',
+                'I cannot see the ap well.', 
+                'I cannot hear the sounds.',
+                'I cannot share tasks.',
+                'I have loast my older lists',
+                'I want to delete my lists',
+                'I want to archieve my tasks'];
+        %>
+        <ol>
+            <% guides.forEach((t) => { %>
+            <li>
+                <%= t %>
+            </li>
+            <% }); %>
+        </ol>
+    </div>
+</div>
+`

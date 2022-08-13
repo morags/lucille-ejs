@@ -1,15 +1,27 @@
 const tasksView = `
 <div class="container text-center p-5">
     <div class="row g-5">
-        <% tasks.forEach((t) => { %>
-            <div class="col">
+        <%
+            var tasks = ['Weekend List', 'Gardening', 'Holiday Shop','Birthday shop','Dinner tasks'];
+
+        %>
+        <ol>
+            <% tasks.forEach((t) => { %>
+            <li>
+                <%= t %>
+            </li>
+            <% }); %>
+        </ol>
+        <!-- <% tasks.forEach((t) => { %>
+            <div class="row">
                 <div class="card g-5">
                     <p class="card-title">
+
                         <%= t %>
                     </p>
                 </div>
             </div>
-            <% }); %>
+        <% }); %> -->
     </div>
 </div>
 `
